@@ -1,0 +1,12 @@
+.form-group {
+  align-items: center;
+}
+
+.verse-container {
+  width: 90%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}

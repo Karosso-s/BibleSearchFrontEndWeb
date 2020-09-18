@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="form-row align-items-center">
+
+    <div class="left">
+      <div class="form-inline">
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Tema: </label>
+        <select [(ngModel)]="searchTheme" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref"  (change)="handleTheme($event.target.value)" (click)="cleanInput(searchText)">
+          <option *ngFor="let theme of selectValues" [value]="theme">{{ theme | titlecase }}</option>
+        </select>
+      </div>
+
+      <div class="col-auto my-1">
+        <input #searchText (keyup.enter)="searchImg(searchText.value)"   type="text" class="form-control" placeholder="Procurar Imagem"> <!-- (blur)="cleanInput(searchText)" -->
+      </div>
+
+      <div class="input-group-append">
+        <button type="button" id="button-addon2"(click)="searchImg(searchText.value)" class="btn btn-outline-secondary" >Buscar</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <a href="https://pixabay.com/" class="pixabay-image">
+        <img src="https://pixabay.com/static/img/logo_square.png" alt="Pixabay">
+      </a>
+    </div>
+  </div>
+
+  <div class="row row-cols-4">
+    <div class="img-container" *ngFor="let img of searchResults" >
+      <img [src]="img.webformatURL" alt="">
+    </div>
+  </div>
+
+  <nav aria-label="..." class="pagination-container">
+    <ul class="pagination justify-content-center">
+      <li [style.display]="searchPage > 3 ? 'block' : 'none'"
+        (click)="gotoPage(1)"
+        class="page-item">
+        <a class="page-link" href="#">Primeira</a>
+      </li>
+      <li class="page-item" [style.display]="searchPage == 1 ? 'none' : 'block'">
+        <a class="page-link" href="#" (click)="previousPage()">Anterior</a>
+      </li>
+
+      <li
+        [style.display]="searchPage < 3 ? 'none' : 'block'"
+        (click)="gotoPage(searchPage - 2)"
+        class="page-item">
+        <a class="page-link" href="#">{{ searchPage - 2 }}</a>
+      </li>
+      <li
+        [style.display]="searchPage < 2 ? 'none' : 'block'"
+        (click)="gotoPage(searchPage - 1)"
+        class="page-item">
+        <a class="page-link" href="#">{{ searchPage - 1 }}</a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="#">{{ searchPage }}</a></li>
+      <li
+        [style.display]="searchPage > searchTotalPages - 2 ? 'none' : 'block'"
+        (click)="gotoPage(searchPage + 1)"
+        class="page-item">
+        <a class="page-link" href="#">{{ searchPage + 1 }}</a>
+      </li>
+      <li
+        [style.display]="searchPage > searchTotalPages - 3 ? 'none' : 'block'"
+        (click)="gotoPage(searchPage + 2)"
+        class="page-item">
+        <a class="page-link" href="#">{{ searchPage + 2 }}</a>
+      </li>
+
+      <li class="page-item" [style.display]="searchPage == searchTotalPages ? 'none' : 'block'">
+        <a class="page-link" (click)="nextPage()" href="#">Próxima</a>
+      </li>
+
+      <li [style.display]="searchPage < searchTotalPages-3 ? 'block' : 'none'"
+      (click)="gotoPage(searchTotalPages)"
+        class="page-item">
+        <a class="page-link" href="#">Última</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>

@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  font-size: 60%;
+
+  --color-primary: #FAFAFB;
+  --color-primary-dark: #5D707F;
+  --color-secondary: #1e2f23ff;
+  --color-tertiary: #173753ff ;
+  --color-quaternary: #3d1308ff;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100vh;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+#root {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 500 1.6rem Roboto;
+}
+
+@media (min-width: 700px) {
+  :root {
+      font-size: 62,5%;
+  }
+}

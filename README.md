@@ -1,27 +1,22 @@
-# MkPost
+# Front-end Web em Angular para o projeto BibleSearch.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+O front-end web utilizará Angular para desenvolver uma página de busca elástica, uma página de busca parametrizada e outra página para configurar um versículo e uma imagem para serem compartilhados em qualquer rede social.
 
-## Development server
+Já foram implementados:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. A Pixabay API (https://pixabay.com/api/docs/), para buscar imagens por temas.
+2. A integração com o Back-end que encontra-se no repositório (https://github.com/Karosso-s/BibleSearchFrontEndWeb).
 
-## Code scaffolding
+Em implementação:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Componente de resultados da busca de imagens
+2. Componente de resultados para a buscar por parâmetros
+3. Componente de resultados para a busca elástica
 
-## Build
+Serão Implementados:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Componente para configuração da imagem com o versículo para compartilhar nas redes sociais.
 
-## Running unit tests
+----
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Repositório aberto a qualquer tipo de sugestões e críticas.
